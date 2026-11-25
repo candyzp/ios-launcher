@@ -44,9 +44,9 @@
     if (launchArgs.length > 2) {
         env = launchArgs;
     } else if (safeMode) {
-        env = @"--geode:use-common-handler-offset=8c4000 --geode:safe-mode";
+        env = @"--geode:use-common-handler-offset=a4c000 --geode:safe-mode";
     } else {
-        env = @"--geode:use-common-handler-offset=8c4000";
+        env = @"--geode:use-common-handler-offset=a4c000";
     }
 
     NSString *b64 = [[env dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0];

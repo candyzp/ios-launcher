@@ -64,6 +64,8 @@ jobs:
       - name: Build
         run: |
           git submodule update --init --recursive
+          curl --fail --location --retry 3 https://raw.githubusercontent.com/geode-sdk/ios-launcher/683cb7917e7d0324b1f22e7d186de9977528f031/Resources/Frameworks/libTulipHook.dylib --output Resources/Frameworks/libTulipHook.dylib
+          test -s Resources/Frameworks/libTulipHook.dylib
           make package FINALPACKAGE=1 STRIP=0
           make clean
           make package FINALPACKAGE=1 STRIP=0 TROLLSTORE=1

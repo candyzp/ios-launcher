@@ -23,6 +23,7 @@ int cache_txm = 0;
 int cache_txm2 = 0;
 
 BOOL has_txm() {
+	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"FORCE_NON_TXM"]) return NO;
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"FORCE_TXM"]) return YES;
 	if (@available(iOS 26.0, *)) return YES;
 	if (cache_txm > 0) return cache_txm == 2;
